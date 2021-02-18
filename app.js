@@ -11,15 +11,13 @@ input.addEventListener("keyup",e=>{
 btn.addEventListener("click",()=>{
     if(document.querySelector(".response").hasChildNodes) removeCity();
     getCity(document.querySelector(".input").value);
-})
-
-
+});
 
 const getCity = city =>{
 fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=f0fa3c30c3cef7caeadc7494cc239b9d`)
     .then(res=>res.json())
     .then(data=>{
-        /* console.log(data); */
+        console.log(data);
         if(data.cod == "404"){
             let h1 = document.createElement("H1");
             h1.textContent = data.message;
@@ -39,6 +37,33 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&ap
         document.querySelector(".response").appendChild(desc);
         document.querySelector(".response").appendChild(temp);
         document.querySelector(".response").appendChild(nameCity);
+        let app = document.getElementById("app");
+        switch (data.weather[0].main) {
+            case "Clear":
+                app.removeAttribute('class');
+                app.classList.add("clear");
+                break;
+            case "Thunderstorm":
+                app.removeAttribute('class');
+                app.classList.add("thunderstorm");
+                break;
+            case "Rain":
+                app.removeAttribute('class');
+                app.classList.add("rain");
+                break;
+            case "Snow":
+                app.removeAttribute('class');
+                app.classList.add("snow");
+                break;
+            case "Clouds":
+                app.removeAttribute('class');
+                app.classList.add("clouds");
+                break;
+            default: app.classList.add("default");
+                break;
+        
+            
+        } 
     });
     document.querySelector(".input").value = "";
 }

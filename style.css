@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital@0;1&display=swap');
+
+:root{
+    --border--Radius : 17px;
+}
 *{
     padding: 0;
     margin: 0;
@@ -10,3 +14,94 @@
     width: 100%;
     height: 100vh;
 }
+
+.divInputs{
+    display: flex;
+    height: 70px;
+    padding: 10px;
+    justify-content: center;
+}
+.input, .btn{
+    border: 1px solid #111;
+}
+.input{
+    border-bottom-left-radius: var(--border--Radius);
+    border-top-left-radius: var(--border--Radius);
+    font-size: 1.5em;
+    padding: 10px;
+    background: none;
+    border-right: none;
+    font-weight: 1000;
+}
+
+.input::placeholder{
+    color: rgb(61, 60, 60);
+}
+.input, .btn:focus{
+    outline: none;
+}
+.btn{
+    border-bottom-right-radius: var(--border--Radius);
+    border-top-right-radius: var(--border--Radius);
+    color: #fff ;
+    background-color: rgb(56, 56, 56);
+    font-size: 1em;
+    padding: 0 10px;
+}
+.btn:active{
+    background-color: rgb(94, 88, 88);
+}
+
+
+
+.response{
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.response img{
+    width: 40%;
+}
+
+.response p{
+    font-size: 1.3em;
+}
+
+.response p:nth-child(2){
+    opacity: .8;
+    margin-bottom: 40px;
+}
+
+.response p:nth-child(3){
+    font-size: 2em;
+    font-weight: 1000;
+}
+
+.response p:nth-child(4){
+    font-weight: 700;
+}
+
+.clear{
+    background-image: linear-gradient(to bottom, #ffff83, #ffff76, #ffff69, #ffff5a, #ffff4a, #ffff40, #ffff35, #ffff27, #ffff21, #ffff19, #ffff0f, #ffff00);
+}
+
+.thunderstorm{
+    background-image: linear-gradient(to bottom, #6a6aff, #5754ef, #433dde, #2d25cd, #0900bc);
+}
+
+.rain{
+    background-image: linear-gradient(to bottom, #9cd8ff, #78b2d6, #548eaf, #306c8a, #004b66);
+}
+.snow{
+    background-image: linear-gradient(to bottom, #fdfdfd, #f1eff2, #e7e0e4, #ded2d5, #d5c4c4);
+}
+.clouds{
+    background-image: linear-gradient(to bottom, #ecf3f8, #c5ccd1, #9fa6ab, #7b8287, #596064);
+}
+.default{
+    background-image: linear-gradient(to bottom, #e742ff, #c432d9, #a122b4, #801191, #61006f);
+}
+
+/* Pasando 800px modificar */
+
