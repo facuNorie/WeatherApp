@@ -17,7 +17,7 @@ const getCity = city =>{
 fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=f0fa3c30c3cef7caeadc7494cc239b9d`)
     .then(res=>res.json())
     .then(data=>{
-        console.log(data);
+        /* console.log(data); */
         if(data.cod == "404"){
             let h1 = document.createElement("H1");
             h1.textContent = data.message;

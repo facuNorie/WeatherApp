@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital@0;1&display=swap');
 
 :root{
-    --border--Radius : 17px;
+    --border--Radius : 30px;
 }
 *{
     padding: 0;
@@ -17,8 +17,8 @@
 
 .divInputs{
     display: flex;
-    height: 70px;
-    padding: 10px;
+    height: 90px;
+    padding: 15px;
     justify-content: center;
 }
 .input, .btn{
@@ -103,5 +103,22 @@
     background-image: linear-gradient(to bottom, #e742ff, #c432d9, #a122b4, #801191, #61006f);
 }
 
+.errorH1{
+    color: red;
+}
+
 /* Pasando 800px modificar */
 
+@media screen and (min-width: 800px){
+    .response img{
+        width: 20%;
+    }
+    .divInputs{
+        height: 120px;
+        padding: 30px;
+    }
+    .response p:nth-child(2){
+        opacity: .8;
+        margin-bottom: 10px;
+    }
+}
